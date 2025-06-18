@@ -141,7 +141,7 @@
   </style>
 </head>
 <body>
-  <h1>💡 Palavras-Chave Supremas</h1>
+  <h1>💡 Palavras-Chave</h1>
   <textarea id="entrada" placeholder="Cole seu texto bruto aqui..."></textarea>
   <button onclick="gerarPalavras()">Gerar</button>
   <div class="resultado" id="resultado"></div>
@@ -172,7 +172,8 @@
       resultadoDiv.innerHTML = "";
 
       palavrasOrdenadas.forEach(([palavra, contagem]) => {
-        const classe = contagem <= 1 ? "ruim" : "";
+        // Cartão vermelho só se frequencia exata 1
+        const classe = contagem === 1 ? "ruim" : "";
         resultadoDiv.innerHTML += `
           <div class="card ${classe}">
             <div class="inner-card">
@@ -189,3 +190,4 @@
   </script>
 </body>
 </html>
+
